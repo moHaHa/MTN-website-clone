@@ -1,27 +1,12 @@
 import Vue from "vue";
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
-
+import ProjectRouter from '@/project/router.js'
 const routes = [
   {
     path: "/",
     component: () => import("@/app/App.vue"),
-    children: [
-      {
-        path: "",
-        component: () => import("@/modules/dev-module/layouts/full/full-layout.vue"),
-        children: [
-          {
-            path: "",
-            alias: '/dashboard',
-            component: () => import("@/modules/dev-module/pages/dashboard/dashboard-page.vue"),
-            children: [
-              
-            ],
-          },    
-        ],
-      },
-    ],
+    children: [ProjectRouter],
   },
 ];
 
