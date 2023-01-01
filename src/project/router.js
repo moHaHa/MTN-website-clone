@@ -41,6 +41,23 @@ let project = {
             },
           ]
         },
+        {
+          path: "admin",
+          component: () => import("./pages/admin/admin-module.vue"),
+          children: [
+            {
+              path: "",
+              component: () => import("./pages/admin/pages/users.vue"),
+              children: [
+              ]
+            },
+            {
+              path: "add-bill/:user",
+              component: () => import("./pages/admin/pages/add-bill.vue"),
+
+            },
+          ]
+        },
 
       ],
     },
