@@ -14,6 +14,12 @@ let project = {
           component: () => import("./pages/vue/vue-page.vue"),
           children: [
             {
+              path: "",
+              component: () => import("./pages/vue/pages/preview/preview-page.vue"),
+              children: [
+              ]
+            },
+            {
               path: "bill",
               component: () => import("./pages/vue/pages/bill/bill-module.vue"),
               children: [

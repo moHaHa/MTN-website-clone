@@ -6,7 +6,7 @@
           <v-form v-model="valid">
             <v-card>
               <v-card-title> Bill </v-card-title>
-              <v-card-sub-title> Phone Number </v-card-sub-title>
+              <v-card-subtitle>Enter Your Phone Number </v-card-subtitle>
               <v-card-text>
                 <v-text-field solo v-model.number="phoneNumber"> </v-text-field>
               </v-card-text>
