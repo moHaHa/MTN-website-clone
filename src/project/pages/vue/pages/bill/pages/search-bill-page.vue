@@ -10,6 +10,10 @@
               <v-card-text>
                 <v-text-field solo v-model.number="phoneNumber"> </v-text-field>
               </v-card-text>
+
+              <v-card-actions>
+                <v-btn color="secondary">Search</v-btn>
+              </v-card-actions>
             </v-card>
           </v-form>
         </v-col>
@@ -22,6 +26,11 @@
 export default {
   data() {
     return {
+      status: {
+        loading: false,
+        phonNumberNotFound: false,
+        getBill: false,
+      },
       phoneNumber: "",
     };
   },
