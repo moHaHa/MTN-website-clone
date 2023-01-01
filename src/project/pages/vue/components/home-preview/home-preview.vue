@@ -1,14 +1,31 @@
 <template>
   <v-app>
-    <v-main class="white">
-      <div class="text-center">
-        <div class="white--text pt-3">
-          <div class="text-h5 mb-3">
-            Ok so this is your studio, you're ready to work now !
+    <v-app-bar elevation="0" height="90" fixed color="transparent">
+      <v-card width="100%">
+        <div class="d-flex align-center">
+          <div class="px-8 py-4">
+            <v-img :src="mtnLogo" width="70"></v-img>
           </div>
-          <p>let's get started</p>
+          <div class="px-0 py-0">
+            <v-tabs>
+              <v-tab>home</v-tab>
+              <v-tab>Check Bill</v-tab>
+            </v-tabs>
+          </div>
+          <div class="ms-auto">
+            <div class="px-3">
+              <v-btn class="me-3 black--text" depressed color="primary">
+                Register
+              </v-btn>
+              <v-btn outlined color="primary"> login </v-btn>
+            </div>
+          </div>
         </div>
-      </div>
+      </v-card>
+    </v-app-bar>
+    <v-main class="white">
+      <m-hero> </m-hero>
+      <m-media-feed> </m-media-feed>
       <m-contact></m-contact>
       <m-footer> </m-footer>
     </v-main>
@@ -16,12 +33,22 @@
 </template>
 
 <script>
+import mtnLogo from "@/assets/mtn-logo.svg";
+import mHero from "./components/hero.vue";
+import mMediaFeed from "./components/media-feed.vue";
 import mContact from "./components/contact.vue";
 import mFooter from "./components/footer.vue";
 export default {
   components: {
+    "m-hero": mHero,
+    "m-media-feed": mMediaFeed,
     "m-contact": mContact,
     "m-footer": mFooter,
+  },
+  data() {
+    return {
+      mtnLogo,
+    };
   },
 };
 </script>
