@@ -10,14 +10,16 @@
             <v-tabs>
               <v-tab :to="'/'">home</v-tab>
               <v-tab :to="'/bill'">Check Bill</v-tab>
+              <v-divider vertical class="mx-3"></v-divider>
+              <v-tab :to="'/admin'">Customers List</v-tab>
             </v-tabs>
           </div>
           <div class="ms-auto">
             <div class="px-3">
               <v-btn to="/register" class="me-3" depressed color="primary">
-                Register
+                Register Customer
               </v-btn>
-              <v-btn to="/login" outlined color="primary"> login </v-btn>
+              <v-btn to="/login" outlined color="primary">admin login </v-btn>
             </div>
           </div>
         </div>
