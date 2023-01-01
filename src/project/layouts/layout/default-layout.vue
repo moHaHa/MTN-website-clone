@@ -10,8 +10,8 @@
             <v-tabs>
               <v-tab :to="'/'">home</v-tab>
               <v-tab :to="'/bill'">Check Bill</v-tab>
-              <v-divider vertical class="mx-3"></v-divider>
-              <v-tab :to="'/admin'">Customers List</v-tab>
+              <v-divider v-if="getAdmin" vertical class="mx-3"></v-divider>
+              <v-tab v-if="getAdmin" :to="'/admin'">Customers List</v-tab>
             </v-tabs>
           </div>
           <div class="ms-auto">
@@ -19,7 +19,20 @@
               <v-btn to="/register" class="me-3" depressed color="primary">
                 Register Customer
               </v-btn>
-              <v-btn to="/login" outlined color="primary">admin login </v-btn>
+
+              <v-btn
+                v-if="getAdmin"
+                @click="
+                  setAdmin(false);
+                  $router.push({ path: '/' });
+                "
+                text
+                color="grey"
+                >admin logout <v-icon class="ms-2">mdi-logout</v-icon>
+              </v-btn>
+              <v-btn v-else to="/login" outlined color="primary"
+                >admin login
+              </v-btn>
             </div>
           </div>
         </div>
@@ -33,12 +46,19 @@
 
 <script>
 import mtnLogo from "@/assets/mtn-logo.svg";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   components: {},
   data() {
     return {
       mtnLogo,
     };
+  },
+  computed: {
+    ...mapGetters("g", ["getAdmin"]),
+  },
+  methods: {
+    ...mapMutations("g", ["setAdmin"]),
   },
 };
 </script>
