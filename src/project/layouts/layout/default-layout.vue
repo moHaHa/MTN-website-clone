@@ -8,43 +8,31 @@
           </div>
           <div class="px-0 py-0">
             <v-tabs>
-              <v-tab>home</v-tab>
-              <v-tab>Check Bill</v-tab>
+              <v-tab :to="'/'">home</v-tab>
+              <v-tab :to="'/bill'">Check Bill</v-tab>
             </v-tabs>
           </div>
           <div class="ms-auto">
             <div class="px-3">
-              <v-btn class="me-3 black--text" depressed color="primary">
+              <v-btn to="/register" class="me-3" depressed color="primary">
                 Register
               </v-btn>
-              <v-btn outlined color="primary"> login </v-btn>
+              <v-btn to="/login" outlined color="primary"> login </v-btn>
             </div>
           </div>
         </div>
       </v-card>
     </v-app-bar>
-    <v-main class="white">
-      <m-hero> </m-hero>
-      <m-media-feed> </m-media-feed>
-      <m-contact></m-contact>
-      <m-footer> </m-footer>
+    <v-main style="background: #f5f5f5">
+      <router-view></router-view>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import mtnLogo from "@/assets/mtn-logo.svg";
-import mHero from "./components/hero.vue";
-import mMediaFeed from "./components/media-feed.vue";
-import mContact from "./components/contact.vue";
-import mFooter from "./components/footer.vue";
 export default {
-  components: {
-    "m-hero": mHero,
-    "m-media-feed": mMediaFeed,
-    "m-contact": mContact,
-    "m-footer": mFooter,
-  },
+  components: {},
   data() {
     return {
       mtnLogo,

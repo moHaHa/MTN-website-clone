@@ -1,13 +1,12 @@
 let project = {
   name: "project",
   path: "",
-  redirect: "project-vue-studio",
   component: () => import("./module-layout.vue"),
   children: [
     {
-      name: "project-vue-studio",
-      path: "project-vue-studio",
-      component: () => import("./layouts/vue/vue-layout.vue"),
+      name: "",
+      path: "/",
+      component: () => import("./layouts/layout/default-layout.vue"),
       children: [
         {
           path: "",
@@ -15,7 +14,19 @@ let project = {
           children: [
             {
               path: "",
-              component: () => import("./pages/vue/pages/preview/preview-page.vue"),
+              component: () => import("./pages/vue/pages/home/home-page.vue"),
+              children: [
+              ]
+            },
+            {
+              path: "register",
+              component: () => import("./pages/vue/pages/register/register-page.vue"),
+              children: [
+              ]
+            },
+            {
+              path: "login",
+              component: () => import("./pages/vue/pages/login/login-page.vue"),
               children: [
               ]
             },

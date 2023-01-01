@@ -1,15 +1,15 @@
 <template>
   <div>
-    <local-register-preview></local-register-preview>
+    <local-task-preview></local-task-preview>
   </div>
 </template>
 
 <script>
-import registerPreview from "./components/register-preview/register-preview.vue";
+import taskPreview from "./components/task-preview/task-preview.vue";
 
 export default {
   components: {
-    "local-register-preview": registerPreview,
+    "local-task-preview": taskPreview,
   },
 };
 </script>
