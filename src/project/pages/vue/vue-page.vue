@@ -1,15 +1,15 @@
 <template>
   <div>
-    <local-home-preview></local-home-preview>
+    <local-register-preview></local-register-preview>
   </div>
 </template>
 
 <script>
-import homePreview from "./components/home-preview/home-preview.vue";
+import registerPreview from "./components/register-preview/register-preview.vue";
 
 export default {
   components: {
-    "local-home-preview": homePreview,
+    "local-register-preview": registerPreview,
   },
 };
 </script>
