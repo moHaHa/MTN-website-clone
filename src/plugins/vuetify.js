@@ -13,7 +13,7 @@ export default new Vuetify({
         secondary: '#046188',
         'light-blue-1': '#649baa',
         'light-blue-2': '#a1c5d1',
-        "black": '#010101',
+        "black": '#202020',
         white: '#ffffff'
       }
     },

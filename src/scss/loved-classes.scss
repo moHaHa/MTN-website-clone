@@ -1,3 +1,68 @@
 .d-flex {
-    display: flex;
+  display: flex;
+}
+
+.m-hover-line {
+  color: var(--v-primary-base);
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'WorkSans-Regular', sans-serif;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 25px;
+
+  &:after {
+    content: '';
+    left: 0;
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: #ffcb05;
+    top: 25px;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+  }
+  &:hover {
+    color: var(--v-white-base) !important;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    &:after {
+      width: 100%;
+      transition: all 0.3s ease;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+    }
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+.v-application {
+  .text-h5,
+  .text-h6 {
+    &.MTNBrighterSans-Bold {
+      font-family: 'Oxygen', sans-serif !important;
+      //   font-family: 'MTNBrighterSans-Bold', sans-serif;
+    }
+  }
+}
+
+.arrow-link {
+  cursor: pointer;
+  .arrow-link--icon {
+    transform: translateX(0px);
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    .arrow-link--icon {
+      transform: translateX(5px);
+      transition: all 0.3s ease;
+    }
+  }
 }
